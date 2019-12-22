@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let options = ['rock', 'paper', 'scissors'];
+        let playerScore = 0;
+        let computerScore = 0;
+
+        let getRandomInt = (min, max) => {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            
+            result = Math.floor(Math.random() * (max - min)) + min;
+            return result;
+        }
+
+        function computerPlay(){
+            getRandomInt(0,3);
+            computerOption  = options[result];
+            return computerOption ;
+        }
+        playerSelection = 'rock'
+        computerSelection  = computerPlay();
+
+        function playRound(playerSelection, computerSelection) {
+            let roundWinner;
+            computerSelection  = computerPlay();
+	        if(computerSelection == 'rock'){
+                roundWinner = "Unentschieden";
+                return roundWinner
+            } else if(computerSelection == 'paper'){
+                roundWinner = "Computer gewinnt!";
+                computerScore += 1;
+                return roundWinner;
+            } else if(computerSelection == 'scissors'){
+                roundWinner = "Spieler gewinnt!";
+                playerScore += 1;
+                return roundWinner;
+            }
+            console.log(roundWinner, "Spielerscore: " + playerScore, "Computerscore: " + computerScore);
+            console.log("Das geht aber")
+        }
+        
+        //computerSelection returnt momentan noch immer das gleiceh weil computrerselection einmal das ausg
+    </script>
+</body>
+</html>
