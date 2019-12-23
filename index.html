@@ -23,35 +23,39 @@
         function computerPlay(){
             getRandomInt(0,3);
             computerOption  = options[result];
-            return computerOption ;
+            return computerOption;
         }
+
+        let playerSelection;
 
         function playRound(playerSelection, computerSelection) {
             let roundWinner;
             computerSelection  = computerPlay();
+            playerSelection = window.prompt("Wähle zwischen Rock, Paper und Scissors aus.");
 	        if(computerSelection == 'rock'){
-                roundWinner = "Unentschieden";
-                return roundWinner
+                roundWinner = "Unentschieden!";
             } else if(computerSelection == 'paper'){
-                roundWinner = "Computer gewinnt!";
+                roundWinner = "Computer gewinnt die Runde!";
                 computerScore += 1;
-                return roundWinner;
             } else if(computerSelection == 'scissors'){
-                roundWinner = "Spieler gewinnt!";
+                roundWinner = "Spieler gewinnt die Runde!";
                 playerScore += 1;
-                return roundWinner;
             }
             console.log(roundWinner, "Spielerscore: " + playerScore, "Computerscore: " + computerScore);
-            console.log("Das geht aber")
         }
-        playerSelection = 'rock'
-        computerSelection  = computerPlay();
 
         function game(playerSelection, computerSelection){
             playRound(this.playerSelection, this.computerSelection);
-            /*for(i = 0; i<5; i++){
+            for(i = 0; i<5; i++){
                 playRound(playerSelection, computerSelection);
-            }*/
+            }
+            if(playerScore > computerScore){
+                console.log("Spieler hat gewonnen!");
+            } else if(playerScore < computerScore){
+                console.log("Computer hat gewonnen!");
+            } else {
+                console.log("Diesmal ging es unentschieden aus.")
+            }
         }
         
         //computerSelection returnt momentan noch immer das gleiceh weil computrerselection einmal das ausg
